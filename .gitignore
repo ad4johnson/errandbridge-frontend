@@ -23,3 +23,7 @@ ios/App/DerivedData/
 # Logs and reports
 *.log
 coverage/
+
+# Python/cache artifacts from tooling
+__pycache__/
+*.pyc
