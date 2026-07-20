@@ -8,15 +8,15 @@ This repository is intentionally frontend-only. The backend is a separate FastAP
 
 Production API docs:
 
-- Swagger UI: https://api.errandbridge.com/docs
-- OpenAPI JSON: https://api.errandbridge.com/openapi.json
-- GraphQL: https://api.errandbridge.com/graphql
+- Swagger UI: <https://api.errandbridge.com/docs>
+- OpenAPI JSON: <https://api.errandbridge.com/openapi.json>
+- GraphQL: <https://api.errandbridge.com/graphql>
 
 Local backend API docs, when the backend is running separately:
 
-- Swagger UI: http://localhost:8001/docs
-- OpenAPI JSON: http://localhost:8001/openapi.json
-- GraphQL: http://localhost:8001/graphql
+- Swagger UI: <http://localhost:8001/docs>
+- OpenAPI JSON: <http://localhost:8001/openapi.json>
+- GraphQL: <http://localhost:8001/graphql>
 
 More details:
 

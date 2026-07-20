@@ -20,10 +20,8 @@ ios/App/Pods/
 ios/App/build/
 ios/App/DerivedData/
 
-# Logs and reports
+# Logs, reports, and cache artifacts
 *.log
 coverage/
-
-# Python/cache artifacts from tooling
 __pycache__/
 *.pyc
