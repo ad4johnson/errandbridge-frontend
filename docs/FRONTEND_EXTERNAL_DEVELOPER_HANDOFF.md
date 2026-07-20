@@ -8,7 +8,14 @@ External frontend developers should be able to work on the React/Capacitor app w
 
 ## Recommended handoff model
 
-Use a frontend-only handoff bundle instead of sharing the full repository root.
+Use this public frontend-only GitHub repository instead of sharing the full
+platform repository root.
+
+Frontend-only repository:
+
+```text
+https://github.com/ad4johnson/errandbridge-frontend
+```
 
 Give the developer:
 
