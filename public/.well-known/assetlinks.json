@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.errandbridge.app",
+      "sha256_cert_fingerprints": [
+        "59:13:AD:F3:10:EA:EA:6C:19:E5:ED:81:89:91:F2:8E:59:8E:05:82:C5:BF:7B:A6:5C:1A:D2:78:E9:DE:44:73"
+      ]
+    }
+  }
+]

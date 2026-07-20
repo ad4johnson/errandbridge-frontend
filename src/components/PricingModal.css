@@ -1,0 +1,232 @@
+.eb-pricing-modal {
+	display: grid;
+	gap: 14px;
+}
+
+.eb-pricing-hero {
+	background: linear-gradient(
+		135deg,
+		rgba(37, 99, 235, 0.08) 0%,
+		rgba(99, 102, 241, 0.06) 40%,
+		rgba(255, 255, 255, 0.92) 100%
+	);
+	border: 1px solid rgba(148, 163, 184, 0.35);
+	border-radius: 16px;
+	padding: 12px 14px;
+	display: grid;
+	gap: 8px;
+}
+
+.eb-pricing-hero ul {
+	margin: 0;
+	padding-left: 18px;
+	color: rgba(15, 23, 42, 0.78);
+	font-size: 13px;
+	line-height: 1.55;
+	display: grid;
+	gap: 6px;
+}
+
+.eb-pricing-region-row {
+	display: grid;
+	gap: 8px;
+}
+
+.eb-pricing-region-label {
+	font-size: 12px;
+	font-weight: 800;
+	color: rgba(15, 23, 42, 0.72);
+}
+
+.eb-pricing-services {
+	display: grid;
+	gap: 12px;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+	.eb-pricing-services {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 980px) {
+	.eb-pricing-services {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+.eb-pricing-service-card {
+	text-align: left;
+	border: 1px solid rgba(148, 163, 184, 0.35);
+	background: rgba(255, 255, 255, 0.96);
+	border-radius: 16px;
+	padding: 12px 12px;
+	box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+	cursor: pointer;
+	display: grid;
+	gap: 8px;
+	transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.eb-pricing-service-card:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+}
+
+.eb-pricing-service-card:active {
+	transform: translateY(0px);
+}
+
+.eb-pricing-service-card[aria-pressed="true"] {
+	border-color: rgba(37, 99, 235, 0.55);
+	box-shadow: 0 18px 40px rgba(37, 99, 235, 0.14);
+}
+
+.eb-pricing-service-card:focus-visible {
+	outline: 3px solid rgba(37, 99, 235, 0.28);
+	outline-offset: 2px;
+}
+
+.eb-pricing-service-title {
+	font-weight: 900;
+	color: #0f172a;
+	font-size: 13.5px;
+	line-height: 1.25;
+	letter-spacing: -0.01em;
+}
+
+.eb-pricing-service-desc {
+	font-size: 12.5px;
+	color: rgba(15, 23, 42, 0.66);
+	line-height: 1.45;
+}
+
+.eb-pricing-service-from {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.eb-pricing-from-label {
+	font-size: 12px;
+	font-weight: 850;
+	color: rgba(15, 23, 42, 0.62);
+}
+
+.eb-pricing-from-value {
+	font-weight: 950;
+	font-size: 14px;
+	color: #1d4ed8;
+	letter-spacing: -0.01em;
+}
+
+.eb-pricing-drawer {
+	border: 1px solid rgba(148, 163, 184, 0.35);
+	border-radius: 16px;
+	background: rgba(255, 255, 255, 0.96);
+	box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+	padding: 12px 14px;
+	display: grid;
+	gap: 10px;
+}
+
+.eb-pricing-tier-grid {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+	.eb-pricing-tier-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+.eb-pricing-tier {
+	border: 1px solid rgba(226, 232, 240, 0.95);
+	border-radius: 14px;
+	padding: 10px 10px;
+	background: #fff;
+	display: grid;
+	gap: 6px;
+}
+
+.eb-pricing-tier-title {
+	font-weight: 900;
+	font-size: 12.5px;
+	color: #0f172a;
+}
+
+.eb-pricing-tier-price {
+	font-weight: 950;
+	font-size: 16px;
+	color: #0f172a;
+	letter-spacing: -0.01em;
+}
+
+.eb-pricing-tier-note {
+	font-size: 12px;
+	color: rgba(15, 23, 42, 0.62);
+	line-height: 1.4;
+}
+
+.eb-pricing-trust-grid {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+	.eb-pricing-trust-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 980px) {
+	.eb-pricing-trust-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+.eb-pricing-trust-item {
+	border: 1px solid rgba(226, 232, 240, 0.9);
+	border-radius: 14px;
+	background: rgba(248, 250, 252, 0.9);
+	padding: 10px 12px;
+	display: grid;
+	gap: 6px;
+}
+
+.eb-pricing-trust-titleRow {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	min-width: 0;
+}
+
+.eb-pricing-trust-icon {
+	font-size: 16px;
+}
+
+.eb-pricing-trust-title {
+	font-weight: 900;
+	font-size: 12.5px;
+	color: #0f172a;
+}
+
+.eb-pricing-trust-desc {
+	font-size: 12px;
+	color: rgba(15, 23, 42, 0.66);
+	line-height: 1.45;
+}
+
+.eb-pricing-actions {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 6px;
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="36 0 420 420" fill="none" role="img" aria-labelledby="ebMarkTitle ebMarkDesc">
+  <title id="ebMarkTitle">ErrandBridge mark</title>
+  <desc id="ebMarkDesc">Stylized EB bridge mark with a location pin.</desc>
+  <defs>
+    <linearGradient id="ebMarkGradient" x1="82" y1="76" x2="438" y2="414" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#07245C" />
+      <stop offset="52%" stop-color="#0A5C85" />
+      <stop offset="100%" stop-color="#15C59D" />
+    </linearGradient>
+    <linearGradient id="ebMarkBridge" x1="148" y1="252" x2="390" y2="252" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0C3A73" />
+      <stop offset="100%" stop-color="#12BB96" />
+    </linearGradient>
+  </defs>
+  <g>
+    <path d="M161 371C111 334 82 274 82 213V181C82 103 144 42 223 42H368" stroke="#07245C" stroke-width="76" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M227 213H408" stroke="#07245C" stroke-width="76" stroke-linecap="round"/>
+    <path d="M364 42H397C468 42 512 95 512 162C512 201 493 234 457 256C495 281 512 313 512 359C512 431 459 470 383 470H228" transform="translate(-42 -12) scale(0.82)" stroke="url(#ebMarkGradient)" stroke-width="98" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M140 340C199 281 253 240 307 214C354 191 400 180 447 184" stroke="#ffffff" stroke-width="50" stroke-linecap="round"/>
+    <path d="M158 349C212 294 263 255 316 229C360 207 403 197 443 201" stroke="url(#ebMarkBridge)" stroke-width="14" stroke-linecap="round"/>
+    <g stroke="url(#ebMarkBridge)" stroke-width="11" stroke-linecap="round">
+      <path d="M284 242V289"/>
+      <path d="M316 233V284"/>
+      <path d="M348 226V279"/>
+      <path d="M380 221V276"/>
+    </g>
+    <path d="M300 132C300 96 329 67 366 67C402 67 431 96 431 132C431 188 366 249 366 249C366 249 300 188 300 132Z" fill="url(#ebMarkGradient)"/>
+    <circle cx="366" cy="132" r="24" fill="#ffffff"/>
+  </g>
+</svg>

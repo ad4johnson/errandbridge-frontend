@@ -1,0 +1,68 @@
+// Project-wide Gradle settings.
+// Ensure Gradle runs on JDK 17 (prevents "Unsupported class file major version 69" when a newer JDK is picked up).
+// NOTE: org.gradle.java.home must live in gradle.properties (not build.gradle).
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Keep AGP aligned with the Gradle wrapper + Capacitor Android plugin.
+        // AGP 8.13.2 matches Gradle 8.13 wrapper; AGP 9+ breaks older Capacitor Android.
+        classpath 'com.android.tools.build:gradle:9.1.0'
+        classpath 'com.google.gms:google-services:4.4.4'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+apply from: "variables.gradle"
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            project.android {
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_17
+                    targetCompatibility JavaVersion.VERSION_17
+                }
+            }
+        }
+
+		project.tasks.matching {
+			def taskName = it.name?.toLowerCase() ?: ''
+			taskName.contains('compile') && taskName.contains('kotlin')
+		}.configureEach {
+			if (it.hasProperty('kotlinOptions')) {
+				it.kotlinOptions {
+					jvmTarget = '17'
+				}
+			}
+		}
+
+        if (project.name == 'capacitor-community-http' && project.hasProperty('android')) {
+            project.android {
+                namespace = 'com.getcapacitor.http.http'
+            }
+        }
+
+        if (project.name == 'capacitor-community-http') {
+            project.tasks.withType(Test).configureEach {
+                enabled = false
+            }
+        }
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.layout.buildDirectory
+}

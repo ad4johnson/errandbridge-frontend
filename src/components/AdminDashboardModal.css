@@ -1,0 +1,523 @@
+/* Admin dashboard tab row - extracted from inline styles so active underline renders
+   consistently across all tabs (including emoji-leading labels). */
+
+.admin-tabs {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 6px;
+	margin-bottom: 24px;
+	border-bottom: 1px solid #e5e7eb;
+	padding: 6px 0 10px 0;
+
+	/* Keep everything on one line; scroll if needed */
+	overflow-x: auto;
+
+	/* Keeps alignment stable */
+	align-items: center;
+}
+
+.admin-tab-btn {
+	position: relative;
+	-webkit-appearance: none;
+	appearance: none;
+	border: 1px solid transparent;
+	background: #f9fafb;
+	cursor: pointer;
+	padding: 7px 10px;
+	font-size: 13px;
+	line-height: 18px;
+	white-space: nowrap;
+	color: #374151;
+	font-weight: 400;
+	transition:
+		background-color 0.15s ease,
+		border-color 0.15s ease,
+		box-shadow 0.15s ease,
+		transform 0.05s ease,
+		color 0.15s ease;
+
+	/* prevent emoji baseline quirks from shifting underline */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	border-radius: 10px;
+	min-height: 34px;
+	flex: 0 0 auto;
+}
+
+.admin-tab-btn:hover {
+	background: #ffffff;
+	border-color: #e5e7eb;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.admin-tab-btn:active {
+	transform: translateY(0.5px);
+}
+
+/* Button-tab active state */
+.admin-tab-btn--active {
+	color: #111827;
+	font-weight: 600;
+	background: rgba(139, 92, 246, 0.12);
+	border-color: rgba(139, 92, 246, 0.35);
+	box-shadow: 0 1px 2px rgba(17, 24, 39, 0.08);
+}
+
+
+/* Accessibility: show focus ring for keyboard users */
+.admin-tab-btn:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+}
+
+/* Smart clickable stat cards (Admin > Statistics) */
+.admin-stats-clickcard {
+	transition:
+		transform 0.08s ease,
+		box-shadow 0.16s ease,
+		border-color 0.16s ease;
+	cursor: pointer;
+}
+
+.admin-stats-clickcard:hover {
+	box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+	border-color: rgba(99, 102, 241, 0.35);
+}
+
+.admin-stats-clickcard:active {
+	transform: translateY(1px);
+}
+
+.admin-stats-clickcard--disabled,
+.admin-stats-clickcard--disabled:hover {
+	cursor: not-allowed;
+	opacity: 0.65;
+	box-shadow: none;
+	border-color: #e5e7eb;
+}
+
+.admin-stats-detail-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(2, 6, 23, 0.55);
+	z-index: 1400;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 18px;
+}
+
+.admin-stats-detail-panel {
+	width: min(860px, 100%);
+	max-height: min(88vh, 820px);
+	overflow: auto;
+	background: #fff;
+	border-radius: 16px;
+	box-shadow: 0 40px 120px rgba(2, 6, 23, 0.35);
+	border: 1px solid rgba(15, 23, 42, 0.12);
+	padding: 18px;
+}
+
+.admin-stats-detail-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 12px;
+}
+
+.admin-stats-detail-title {
+	font-size: 16px;
+	font-weight: 800;
+	color: #0f172a;
+}
+
+.admin-stats-detail-subtitle {
+	font-size: 12px;
+	color: #64748b;
+	margin-top: 2px;
+}
+
+.admin-stats-detail-close {
+	border: none;
+	background: rgba(15, 23, 42, 0.06);
+	color: #0f172a;
+	width: 36px;
+	height: 36px;
+	border-radius: 999px;
+	font-weight: 900;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.admin-stats-detail-close:hover {
+	background: rgba(15, 23, 42, 0.1);
+}
+
+.admin-stats-row {
+	display: grid;
+	grid-template-columns: 24px minmax(120px, 1.2fr) minmax(140px, 3fr) 70px;
+	gap: 10px;
+	align-items: center;
+	padding: 10px 10px;
+	border-radius: 12px;
+}
+
+.admin-stats-row:nth-child(odd) {
+	background: rgba(15, 23, 42, 0.03);
+}
+
+.admin-stats-badge {
+	width: 22px;
+	height: 22px;
+	border-radius: 999px;
+	display: grid;
+	place-items: center;
+	font-size: 12px;
+	font-weight: 800;
+	color: #fff;
+	background: linear-gradient(135deg, #6366f1, #a855f7);
+}
+
+.admin-stats-bar {
+	height: 10px;
+	border-radius: 999px;
+	background: rgba(148, 163, 184, 0.35);
+	overflow: hidden;
+}
+
+.admin-stats-bar > span {
+	display: block;
+	height: 100%;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #38bdf8, #6366f1, #a855f7);
+}
+
+.admin-action-feedback {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	white-space: nowrap;
+}
+
+.admin-inline-spinner {
+	width: 12px;
+	height: 12px;
+	border-radius: 999px;
+	border: 2px solid currentColor;
+	border-top-color: transparent;
+	animation: admin-inline-spin 0.8s linear infinite;
+	flex: 0 0 auto;
+}
+
+@keyframes admin-inline-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.admin-errand-queue-toolbar {
+	display: grid;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+.admin-errand-queue-toolbar-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.admin-errand-queue-count {
+	font-size: 12px;
+	font-weight: 700;
+	color: #475569;
+}
+
+.admin-errand-sort-control {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #334155;
+}
+
+.admin-errand-sort-control select {
+	padding: 8px 10px;
+	border-radius: 10px;
+	border: 1px solid #cbd5e1;
+	background: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	color: #0f172a;
+}
+
+.admin-errand-filter-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.admin-errand-filter-chip {
+	border: 1px solid #cbd5e1;
+	background: #f8fafc;
+	color: #475569;
+	border-radius: 999px;
+	padding: 8px 12px;
+	font-size: 12px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.admin-errand-filter-chip--active {
+	background: rgba(99, 102, 241, 0.12);
+	border-color: rgba(99, 102, 241, 0.35);
+	color: #4338ca;
+	box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.admin-errand-search-input {
+	width: 100%;
+	padding: 11px 12px;
+	border-radius: 12px;
+	border: 1px solid #cbd5e1;
+	background: #fff;
+	font-size: 13px;
+	color: #0f172a;
+}
+
+.admin-errand-queue-groups {
+	display: grid;
+	gap: 18px;
+}
+
+.admin-errand-queue-group {
+	display: grid;
+	gap: 12px;
+}
+
+.admin-errand-queue-group-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-errand-queue-group-title {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 800;
+	color: #0f172a;
+}
+
+.admin-errand-queue-group-count {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 28px;
+	height: 28px;
+	padding: 0 10px;
+	border-radius: 999px;
+	background: #eef2ff;
+	color: #4338ca;
+	font-size: 12px;
+	font-weight: 800;
+}
+
+.admin-errand-queue-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 16px;
+}
+
+.admin-errand-queue-card {
+	display: grid;
+	gap: 14px;
+	padding: 16px;
+	border-radius: 18px;
+	border: 1px solid #e2e8f0;
+	background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+	box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.admin-errand-card-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.admin-errand-card-header-main {
+	min-width: 0;
+}
+
+.admin-errand-card-queue-ref {
+	font-size: 12px;
+	font-weight: 800;
+	color: #475569;
+}
+
+.admin-errand-card-title {
+	margin: 6px 0 0;
+	font-size: 18px;
+	line-height: 1.25;
+	font-weight: 800;
+	color: #0f172a;
+	word-break: break-word;
+}
+
+.admin-errand-status-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px 10px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 800;
+	white-space: nowrap;
+}
+
+.admin-errand-status-badge--pending { background: #fef3c7; color: #92400e; }
+.admin-errand-status-badge--assigned { background: #dbeafe; color: #1d4ed8; }
+.admin-errand-status-badge--active { background: #ede9fe; color: #6d28d9; }
+.admin-errand-status-badge--completed { background: #dcfce7; color: #166534; }
+.admin-errand-status-badge--cancelled { background: #fee2e2; color: #b91c1c; }
+
+.admin-errand-card-summary {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.55;
+	color: #475569;
+}
+
+.admin-errand-card-meta { display: grid; gap: 8px; }
+
+.admin-errand-meta-row {
+	display: grid;
+	grid-template-columns: 72px minmax(0, 1fr);
+	gap: 10px;
+	align-items: start;
+}
+
+.admin-errand-meta-label {
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #64748b;
+}
+
+.admin-errand-meta-value {
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.45;
+	color: #0f172a;
+	word-break: break-word;
+}
+
+.admin-errand-progress-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.admin-errand-progress-chip {
+	padding: 5px 9px;
+	border-radius: 999px;
+	background: #e5e7eb;
+	color: #6b7280;
+	font-size: 10px;
+	font-weight: 700;
+}
+
+.admin-errand-progress-chip--active { background: #7c3aed; color: #fff; }
+.admin-errand-progress-chip--done { background: #dcfce7; color: #166534; }
+
+.admin-errand-assigner {
+	display: grid;
+	gap: 8px;
+	padding: 12px;
+	border-radius: 14px;
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+}
+
+.admin-errand-assigner-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.admin-errand-assigner select {
+	flex: 1;
+	min-width: 200px;
+	padding: 10px 12px;
+	border-radius: 10px;
+	border: 1px solid #cbd5e1;
+	background: #fff;
+	font-size: 12px;
+	color: #0f172a;
+}
+
+.admin-errand-assigner-note { font-size: 11px; font-weight: 700; color: #64748b; }
+
+.admin-errand-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.admin-errand-action-btn {
+	border: 1px solid transparent;
+	border-radius: 12px;
+	padding: 10px 12px;
+	font-size: 12px;
+	font-weight: 800;
+	cursor: pointer;
+}
+
+.admin-errand-action-btn:disabled { cursor: not-allowed; opacity: 0.82; }
+.admin-errand-action-btn--neutral { background: #f8fafc; border-color: #d1d5db; color: #334155; }
+.admin-errand-action-btn--info { background: #ecfeff; border-color: #67e8f9; color: #0f766e; }
+.admin-errand-action-btn--secondary { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+.admin-errand-action-btn--primary { background: #dbeafe; border-color: #93c5fd; color: #1d4ed8; }
+.admin-errand-action-btn--success { background: #dcfce7; border-color: #86efac; color: #166534; }
+.admin-errand-action-btn--danger { background: #fff; border-color: #fecaca; color: #b91c1c; }
+
+.admin-errand-state-label {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 12px;
+	padding: 10px 12px;
+	font-size: 12px;
+	font-weight: 800;
+}
+
+.admin-errand-state-label--completed { background: #dcfce7; color: #166534; }
+.admin-errand-state-label--cancelled { background: #fee2e2; color: #b91c1c; }
+
+.admin-errand-queue-empty {
+	padding: 36px 16px;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 700;
+	color: #64748b;
+}
+
+@media (max-width: 640px) {
+	.admin-errand-card-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.admin-errand-meta-row {
+		grid-template-columns: 1fr;
+		gap: 4px;
+	}
+
+	.admin-errand-actions {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.admin-errand-queue-grid {
+		grid-template-columns: 1fr;
+	}
+}

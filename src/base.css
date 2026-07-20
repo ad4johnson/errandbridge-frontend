@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	background: #f9fafb;
+	color: #111827;
+}
+
+:root {
+	--ocean-deep: #0f172a;
+	--ocean-blue: #0ea5e9;
+	--ocean-indigo: #6366f1;
+	--ocean-purple: #a855f7;
+	--ocean-teal: #14b8a6;
+}
+
+.env-banner {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: #fff7d6;
+	color: #7a4d00;
+	border-bottom: 1px solid rgba(122, 77, 0, 0.15);
+	padding: 8px 16px;
+	font-size: 0.85rem;
+	font-weight: 600;
+	text-align: center;
+	flex-wrap: wrap;
+	row-gap: 6px;
+}
+
+.env-banner--compact {
+	position: fixed;
+	top: auto;
+	bottom: 16px;
+	left: 16px;
+	border-radius: 999px;
+	padding: 6px 12px;
+	font-size: 0.72rem;
+	font-weight: 600;
+	box-shadow: 0 10px 24px rgba(122, 77, 0, 0.12);
+	opacity: 0.92;
+	max-width: calc(100% - 32px);
+}
+
+.env-banner--warning {
+	background: #fee2e2;
+	color: #991b1b;
+	border-bottom: 1px solid rgba(153, 27, 27, 0.2);
+}
+
+.device-badge {
+	position: sticky;
+	top: 36px;
+	z-index: 1001;
+	margin: 6px auto 0;
+	width: fit-content;
+	padding: 4px 12px;
+	border-radius: 999px;
+	background: #e0f2fe;
+	color: #075985;
+	font-size: 0.75rem;
+	font-weight: 600;
+	box-shadow: 0 4px 10px rgba(14, 116, 144, 0.15);
+}
+
+@media (max-width: 640px) {
+	.env-banner {
+		flex-direction: column;
+		align-items: flex-start;
+		text-align: left;
+	}
+	.env-banner,
+	.env-banner--compact,
+	.env-banner--warning,
+	.device-badge {
+		display: none;
+	}
+}
+
+img,
+svg,
+video,
+canvas {
+	max-width: 100%;
+	height: auto;
+}
+
+#credential_picker_container,
+.g_id_prompt,
+.g_id_signin,
+#g_id_onload {
+	z-index: 3005;
+}
+
+/* Google Identity Services (One Tap) sometimes leaves a full-screen container mounted
+   that can intercept clicks/taps after navigation. Prevent that by ensuring the
+   wrapper containers don't capture pointer events, while keeping the iframe clickable. */
+#credential_picker_container,
+.g_id_prompt {
+	pointer-events: none;
+}
+
+#credential_picker_container iframe,
+.g_id_prompt iframe {
+	pointer-events: auto;
+}

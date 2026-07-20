@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="380" viewBox="0 0 560 380" fill="none" role="img" aria-labelledby="ebHeaderMarkTitle ebHeaderMarkDesc">
+  <title id="ebHeaderMarkTitle">ErrandBridge header mark</title>
+  <desc id="ebHeaderMarkDesc">Transparent ErrandBridge EB bridge mark sized for compact headers.</desc>
+  <defs>
+    <linearGradient id="ebHeaderBrandGradient" x1="58" y1="34" x2="510" y2="332" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#07245C" />
+      <stop offset="55%" stop-color="#0A5C85" />
+      <stop offset="100%" stop-color="#15C59D" />
+    </linearGradient>
+    <linearGradient id="ebHeaderBridgeGradient" x1="154" y1="230" x2="506" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0C3A73" />
+      <stop offset="100%" stop-color="#12BB96" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(6 6)">
+    <path
+      d="M132 304C92 274 68 227 68 172V146C68 73 125 18 200 18H353"
+      stroke="#07245C"
+      stroke-width="72"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M203 175H398"
+      stroke="#07245C"
+      stroke-width="72"
+      stroke-linecap="round"
+    />
+    <path
+      d="M351 18H540C612 18 664 67 664 136C664 176 645 211 608 234C648 258 664 290 664 336C664 408 611 458 536 458H282"
+      transform="translate(-10 -18) scale(0.78)"
+      stroke="url(#ebHeaderBrandGradient)"
+      stroke-width="92"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M150 286C228 212 296 170 362 145C422 122 480 111 540 116"
+      stroke="#ffffff"
+      stroke-width="50"
+      stroke-linecap="round"
+    />
+    <path
+      d="M175 294C247 225 311 182 375 156C431 133 486 123 537 126"
+      stroke="url(#ebHeaderBridgeGradient)"
+      stroke-width="14"
+      stroke-linecap="round"
+    />
+    <g stroke="url(#ebHeaderBridgeGradient)" stroke-width="10" stroke-linecap="round">
+      <path d="M350 170V219" />
+      <path d="M385 160V215" />
+      <path d="M421 151V211" />
+      <path d="M457 145V208" />
+      <path d="M493 141V205" />
+    </g>
+    <path
+      d="M382 94C382 59 410 31 445 31C480 31 508 59 508 94C508 147 445 208 445 208C445 208 382 147 382 94Z"
+      fill="url(#ebHeaderBrandGradient)"
+    />
+    <circle cx="445" cy="94" r="24" fill="#ffffff" />
+  </g>
+</svg>

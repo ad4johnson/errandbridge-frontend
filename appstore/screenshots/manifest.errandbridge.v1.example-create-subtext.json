@@ -1,0 +1,34 @@
+{
+  "screens": [
+    {
+      "key": "01-hero",
+      "input": "hero.png",
+      "headline": "Get things done back home",
+      "subtext": "Send errands in minutes. Track progress and receive proof."
+    },
+    {
+      "key": "02-create",
+      "input": "create.png",
+      "headline": "Describe your errand fast",
+      "subtext": "Tell us what you need - we handle the rest."
+    },
+    {
+      "key": "03-locations",
+      "input": "locations.png",
+      "headline": "Set pickup & delivery locations",
+      "subtext": "We handle logistics and coordination."
+    },
+    {
+      "key": "04-review",
+      "input": "review.png",
+      "headline": "Review before you confirm",
+      "subtext": "Clear pricing. Full visibility before payment."
+    },
+    {
+      "key": "05-payment",
+      "input": "payment.png",
+      "headline": "Secure payment, zero surprises",
+      "subtext": "Pay safely and receive verified proof on completion."
+    }
+  ]
+}

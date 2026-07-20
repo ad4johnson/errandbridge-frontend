@@ -1,0 +1,25 @@
+node_modules/
+build/
+
+# Local performance audit artifacts
+lighthouse/
+.env
+.env.capacitor
+.env.capacitor.local
+.env*.local
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Native/generated artifacts
+android/.gradle/
+android/app/build/
+ios/App/Pods/
+ios/App/build/
+ios/App/DerivedData/
+
+# Logs and reports
+*.log
+coverage/

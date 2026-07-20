@@ -1,0 +1,147 @@
+{
+  "Changes": [
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "_48f9c2536eccd2b7e9e96cdc67516ec.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          { "Value": "_c4b5d89404a9eb3066802b0beb9d868.api.errandbridge.com.acm-validations.aws." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "_48f9c26386cced2b2f9ee96cdc67516ec.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          { "Value": "_dcf4bb589404a9e3b068802bbeb9d868.api.errandbridge.com.acm-validations.aws." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "_amazonses.errandbridge.com.",
+        "Type": "TXT",
+        "TTL": 600,
+        "ResourceRecords": [
+          { "Value": "\"Qy3vll9aXfSlleISNlDTL8fRkW1Y5E5noTC1OSK7oPM=\"" }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "_dmarc.errandbridge.com.",
+        "Type": "TXT",
+        "TTL": 300,
+        "ResourceRecords": [
+          { "Value": "\"v=DMARC1; p=none;\"" }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "3qeyjt6xbi6aanko7ehriwj3w7a4n7._domainkey.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 1800,
+        "ResourceRecords": [
+          { "Value": "3qeyjt6xbi6aanko7ehriwj3w7a4n7.dkim.amazonses.com." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "dpnlh66fvmmf7scefo7v2uwblszw6cq._domainkey.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          { "Value": "dpnlh66fvmmf7scefo7v2uwblszw6cq.dkim.amazonses.com." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "jk6jiaspwr7lhspapvipvq6qhdwcm2._domainkey.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 600,
+        "ResourceRecords": [
+          { "Value": "jk6jiaspwr7lhspapvipvq6qhdwcm2.dkim.amazonses.com." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "pz7tuw6wd755vlcykz6kp4nbziuvkx3c._domainkey.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 600,
+        "ResourceRecords": [
+          { "Value": "pz7tuw6wd755vlcykz6kp4nbziuvkx3c.dkim.amazonses.com." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "rv6pzzzyc5rcpg6ccgrtkdcttjf5eh5._domainkey.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 1800,
+        "ResourceRecords": [
+          { "Value": "rv6pzzzyc5rcpg6ccgrtkdcttjf5eh5.dkim.amazonses.com." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "rvw24qbb65vbwesu5s3d24tt7lrzljzb._domainkey.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 600,
+        "ResourceRecords": [
+          { "Value": "rvw24qbb65vbwesu5s3d24tt7lrzljzb.dkim.amazonses.com." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "_c4b5d89404a9eb3066802b0beb9d868.api.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          { "Value": "_c4b5d89404a9eb3066802b0beb9d868.api.errandbridge.com.acm-validations.aws." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "_dcf4bb589404a9e3b068802bbeb9d868.api.errandbridge.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          { "Value": "_dcf4bb589404a9e3b068802bbeb9d868.api.errandbridge.com.acm-validations.aws." }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "api.errandbridge.com.",
+        "Type": "A",
+        "TTL": 300,
+        "ResourceRecords": [
+          { "Value": "34.205.140.60" }
+        ]
+      }
+    }
+  ]
+}

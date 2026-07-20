@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo-mark.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="application-name" content="ErrandBridge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="ErrandBridge" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>ErrandBridge | Get Things Done Back Home Without Being There</title>
+
+    <meta
+      name="description"
+      content="Send an errand in minutes. Get live updates, tracking, and proof as verified operators complete it."
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+
+    <!--
+      Canonical:
+      - CRA serves this same HTML for multiple SPA routes (/careers, /pilot, etc).
+      - A static canonical here would incorrectly canonicalize every route to "/".
+      - Instead, inject the canonical dynamically for JS-capable crawlers/browsers.
+      - Special-case /lite (audit-only) to canonicalize back to "/".
+    -->
+    <script>
+      (function () {
+        try {
+          var url = new URL(window.location.href);
+          url.hash = "";
+          if (url.pathname === "/lite" || url.pathname.indexOf("/lite/") === 0) {
+            url.pathname = "/";
+            url.search = "";
+          }
+          var link = document.createElement("link");
+          link.rel = "canonical";
+          link.href = url.toString();
+          document.head.appendChild(link);
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
+
+    <!-- Open Graph (used by most social previews; also helps crawlers understand primary page media) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ErrandBridge" />
+    <meta property="og:url" content="https://www.errandbridge.com/" />
+    <meta property="og:title" content="ErrandBridge | Get Things Done Back Home Without Being There" />
+    <meta
+      property="og:description"
+      content="Send an errand in minutes. Get live updates, tracking, and proof as verified operators complete it."
+    />
+    <meta
+      property="og:image"
+      content="https://www.errandbridge.com/african-artifacts/Athens-Ancient-Theatre-Sunny-1200.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta
+      property="og:image:alt"
+      content="ErrandBridge - verified cross-border errands with proof and live tracking"
+    />
+
+    <!-- Legacy Google / generic crawler hints -->
+    <meta itemprop="name" content="ErrandBridge" />
+    <meta
+      itemprop="description"
+      content="Send an errand in minutes. Get live updates, tracking, and proof as verified operators complete it."
+    />
+    <meta
+      itemprop="image"
+      content="https://www.errandbridge.com/african-artifacts/Athens-Ancient-Theatre-Sunny-1200.jpg"
+    />
+
+    <!-- Twitter / X cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ErrandBridge | Get Things Done Back Home Without Being There" />
+    <meta
+      name="twitter:description"
+      content="Send an errand in minutes. Get live updates, tracking, and proof as verified operators complete it."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.errandbridge.com/african-artifacts/Athens-Ancient-Theatre-Sunny-1200.jpg"
+    />
+
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="oX4BMW5ZR5M4h5DSybx9-FoLNuT-euKi-4Oi9" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ErrandBridge",
+        "legalName": "ErrandBridge Limited",
+        "url": "https://www.errandbridge.com",
+        "description": "Verified cross-border errands with proof, tracking, and trusted local operators.",
+        "logo": "https://www.errandbridge.com/logo-full.png",
+        "image": "https://www.errandbridge.com/african-artifacts/Athens-Ancient-Theatre-Sunny-1200.jpg",
+        "email": "admin@errandbridge.com",
+        "telephone": "+44 1536 211973",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "International House, 6 South Molton Street",
+          "addressLocality": "London",
+          "postalCode": "W1K 5QF",
+          "addressCountry": "GB"
+        },
+        "sameAs": [
+          "https://www.instagram.com/errandbridgeltd/",
+          "https://www.tiktok.com/@errandbridgeltd?lang=en-GB",
+          "https://www.facebook.com/profile.php?id=61579501553347"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "support@errandbridge.com",
+            "telephone": "+44 1536 211973",
+            "availableLanguage": ["English"]
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "privacy and data protection",
+            "email": "privacy@errandbridge.com",
+            "telephone": "+44 1536 211973",
+            "availableLanguage": ["English"]
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "legal and corporate",
+            "email": "admin@errandbridge.com",
+            "telephone": "+44 1536 211973",
+            "availableLanguage": ["English"]
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ErrandBridge",
+        "url": "https://www.errandbridge.com",
+        "publisher": {
+          "@type": "Organization",
+          "name": "ErrandBridge",
+          "url": "https://www.errandbridge.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.errandbridge.com/logo-full.png"
+          }
+        }
+      }
+    </script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body,
+      #root {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: #f9fafb;
+        color: #111827;
+      }
+
+      :root {
+        --ocean-deep: #0f172a;
+        --ocean-blue: #0ea5e9;
+        --ocean-indigo: #6366f1;
+        --ocean-purple: #a855f7;
+        --ocean-teal: #14b8a6;
+      }
+
+      .env-banner {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #fff7d6;
+        color: #7a4d00;
+        border-bottom: 1px solid rgba(122, 77, 0, 0.15);
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-align: center;
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+
+      .env-banner--compact {
+        position: fixed;
+        top: auto;
+        bottom: 16px;
+        left: 16px;
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        box-shadow: 0 10px 24px rgba(122, 77, 0, 0.12);
+        opacity: 0.92;
+        max-width: calc(100% - 32px);
+      }
+
+      .env-banner--warning {
+        background: #fee2e2;
+        color: #991b1b;
+        border-bottom: 1px solid rgba(153, 27, 27, 0.2);
+      }
+
+      .device-badge {
+        position: sticky;
+        top: 36px;
+        z-index: 1001;
+        margin: 6px auto 0;
+        width: fit-content;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: #e0f2fe;
+        color: #075985;
+        font-size: 0.75rem;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(14, 116, 144, 0.15);
+      }
+
+      @media (max-width: 640px) {
+        .env-banner {
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+        }
+      }
+
+      img,
+      svg,
+      video,
+      canvas {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #credential_picker_container,
+      .g_id_prompt,
+      .g_id_signin,
+      #g_id_onload {
+        z-index: 3005;
+      }
+    </style>
+  <link rel="dns-prefetch" href="https://a.tile.openstreetmap.org" />
+  <link rel="dns-prefetch" href="https://b.tile.openstreetmap.org" />
+  <link rel="dns-prefetch" href="https://accounts.google.com" />
+  <link rel="dns-prefetch" href="https://api.errandbridge.com" />
+  </head>
+  <body>
+    <noscript>ErrandBridge works best with JavaScript enabled so you can place errands, track progress, and receive live updates.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
