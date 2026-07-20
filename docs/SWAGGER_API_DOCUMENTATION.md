@@ -69,6 +69,86 @@ Swagger includes a `BearerAuth` security scheme. In Swagger UI:
 
 Do not share admin or production user tokens with external developers. Create a test user or service identity for controlled integration work.
 
+## One-time code login endpoints
+
+ErrandBridge exposes a two-step one-time-code flow for tokenized sign-in links.
+These endpoints are documented in Swagger under the `tso` tag and also exposed
+under the `login` tag as aliases.
+
+### Request a code
+
+```text
+POST /tso/request-code
+POST /login/request-code
+```
+
+Request body:
+
+```json
+{
+  "token": "<signed-login-link-token>"
+}
+```
+
+The `token` must be a short-lived backend-signed JWT with audience
+`login-link`. It should identify the user through `sub`, `email`, `identifier`,
+or `phone` claims.
+
+Successful response shape:
+
+```json
+{
+  "status": "SUCCESS",
+  "code": 0,
+  "message": "Code sent",
+  "data": {
+    "deliveryChannel": "email",
+    "maskedDestination": "cl***@example.com",
+    "expiresInSeconds": 600
+  },
+  "timestamp": "2026-07-20T19:42:59.464Z",
+  "error": null,
+  "path": "/tso/request-code"
+}
+```
+
+### Verify a code
+
+```text
+POST /tso/verify
+POST /login/verify
+```
+
+Request body:
+
+```json
+{
+  "token": "<signed-login-link-token>",
+  "code": "483921"
+}
+```
+
+Successful response shape:
+
+```json
+{
+  "status": "SUCCESS",
+  "code": 0,
+  "message": "Code verified",
+  "data": {
+    "sessionToken": "<time-limited-session-token>",
+    "expiresInSeconds": 3600,
+    "tokenType": "bearer"
+  },
+  "timestamp": "2026-07-20T19:41:41.640Z",
+  "error": null,
+  "path": "/tso/verify"
+}
+```
+
+The returned `sessionToken` is a time-limited JWT. Its lifetime defaults to 60
+minutes and can be adjusted with `LOGIN_CODE_SESSION_MINUTES`.
+
 ## Public/no-auth endpoints
 
 These endpoints are safe starting points for smoke checks:
