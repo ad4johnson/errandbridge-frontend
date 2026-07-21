@@ -69,6 +69,10 @@ Swagger groups endpoints into numbered sections so the most common workflows are
 - `12 Admin`
 - `13 GraphQL`
 
+Inside each section, Swagger UI sorts operations by URL path (`operationsSorter: "alpha"`).
+That keeps all actions for the same resource near each other, for example `GET`, `POST`,
+`PUT`, `PATCH`, and `DELETE` variants of a related endpoint.
+
 ## Authentication
 
 Most business endpoints require a JWT bearer token:
