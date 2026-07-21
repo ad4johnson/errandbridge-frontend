@@ -86,6 +86,51 @@ Swagger includes a `BearerAuth` security scheme. In Swagger UI:
 
 Do not share admin or production user tokens with external developers. Create a test user or service identity for controlled integration work.
 
+### Refresh tokens
+
+REST login/signup responses now include both:
+
+- `access_token`: short/session token used in `Authorization: Bearer <token>`.
+- `refresh_token`: longer-lived token used only to request a new session.
+
+Use the refresh token endpoint when the access token expires:
+
+```text
+POST /auth/refresh
+POST /api/auth/refresh
+```
+
+Request body:
+
+```json
+{
+  "refresh_token": "<refresh-token>"
+}
+```
+
+Successful response shape matches login and includes a fresh token pair:
+
+```json
+{
+  "access_token": "<new-access-token>",
+  "refresh_token": "<new-refresh-token>",
+  "token_type": "bearer",
+  "user_id": 448,
+  "email": "testuser@example.com",
+  "first_name": "Test",
+  "last_name": "User",
+  "phone": null,
+  "is_email_verified": true,
+  "is_admin": false
+}
+```
+
+Security notes:
+
+- Do not send `refresh_token` as a Bearer token to business endpoints.
+- Store refresh tokens more carefully than access tokens; for mobile, prefer the platform secure store/keychain.
+- The refresh token lifetime defaults to 30 days and can be adjusted with `JWT_REFRESH_EXPIRES_DAYS`.
+
 ## One-time code login endpoints
 
 ErrandBridge exposes a two-step one-time-code flow for tokenized sign-in links.
@@ -155,6 +200,7 @@ Successful response shape:
   "message": "Code verified",
   "data": {
     "sessionToken": "<time-limited-session-token>",
+    "refreshToken": "<refresh-token>",
     "expiresInSeconds": 3600,
     "tokenType": "bearer"
   },
