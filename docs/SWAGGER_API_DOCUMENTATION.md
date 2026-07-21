@@ -52,6 +52,23 @@ The OpenAPI schema is generated directly from the FastAPI app in `errandbridge-b
 
 The backend also exposes GraphQL through Strawberry at `/graphql`. GraphQL is referenced from the OpenAPI external docs section, but GraphQL operations are explored directly at `/graphql`, not inside Swagger.
 
+Swagger groups endpoints into numbered sections so the most common workflows are easier to find:
+
+- `00 System & Health`
+- `01 Auth & Account`
+- `02 One-time Code Login`
+- `03 Errands & Attachments`
+- `04 Pilots & Delivery`
+- `05 Tracking & Live Location`
+- `06 Payments & Subscriptions`
+- `07 Promo Codes`
+- `08 Support & Incidents`
+- `09 Public & Reviews`
+- `10 Assistant & AI`
+- `11 Analytics & Voice`
+- `12 Admin`
+- `13 GraphQL`
+
 ## Authentication
 
 Most business endpoints require a JWT bearer token:
@@ -72,8 +89,9 @@ Do not share admin or production user tokens with external developers. Create a 
 ## One-time code login endpoints
 
 ErrandBridge exposes a two-step one-time-code flow for tokenized sign-in links.
-These endpoints are documented in Swagger under the `tso` tag and also exposed
-under the `login` tag as aliases.
+These endpoints are documented in Swagger under `02 One-time Code Login`. Both
+`/tso/*` and `/login/*` paths are exposed so integrators can use the naming style
+that fits their client.
 
 ### Request a code
 
