@@ -1,6 +1,6 @@
 # ErrandBridge Swagger / OpenAPI Documentation
 
-Last updated: 2026-07-20
+Last updated: 2026-07-22
 
 ## Purpose
 
@@ -73,9 +73,14 @@ Inside each section, Swagger UI sorts operations by URL path (`operationsSorter:
 That keeps all actions for the same resource near each other, for example `GET`, `POST`,
 `PUT`, `PATCH`, and `DELETE` variants of a related endpoint.
 
+Public REST v1 endpoints use `/v1/...` paths. Legacy `/api/v1/...` aliases remain callable
+for older deployed clients, but they are hidden from Swagger so external developers see the
+clean canonical API surface.
+
 ## Authentication
 
-Most business endpoints require a JWT bearer token:
+Most business endpoints require a JWT bearer token. In Swagger UI, use **Authorize** instead
+of manually typing an `authorization` header into each endpoint:
 
 ```text
 Authorization: Bearer <token>
@@ -90,6 +95,16 @@ Swagger includes a `BearerAuth` security scheme. In Swagger UI:
 
 Do not share admin or production user tokens with external developers. Create a test user or service identity for controlled integration work.
 
+### User UUIDs
+
+Every user has a stable public UUID exposed as `user_uuid` in REST responses and `userUuid`
+in GraphQL/camel-case payloads. Use this UUID when an integration needs to map records to a
+specific user instead of exposing internal numeric database IDs.
+
+Important: `user_uuid` is an identifier, not an authentication secret. Protected endpoints
+must still use a Bearer access token so one user cannot access another user's data just by
+knowing their UUID.
+
 ### Refresh tokens
 
 REST login/signup responses now include both:
@@ -101,7 +116,6 @@ Use the refresh token endpoint when the access token expires:
 
 ```text
 POST /auth/refresh
-POST /api/auth/refresh
 ```
 
 Request body:
@@ -120,6 +134,7 @@ Successful response shape matches login and includes a fresh token pair:
   "refresh_token": "<new-refresh-token>",
   "token_type": "bearer",
   "user_id": 448,
+  "user_uuid": "2b84d1fd-3ed3-44b0-9470-f8f1f9ad9356",
   "email": "testuser@example.com",
   "first_name": "Test",
   "last_name": "User",
