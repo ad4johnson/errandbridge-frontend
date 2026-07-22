@@ -246,6 +246,19 @@ These endpoints are safe starting points for smoke checks:
 
 Some AI, payment, or admin behavior may still depend on environment variables and service configuration.
 
+## Customer errands endpoints
+
+Authenticated customer errands are documented under `03 Errands & Attachments`:
+
+- `GET /errands` — list errands owned by the authenticated user.
+- `GET /errands/{errand_id}` — get one errand owned by the authenticated user.
+- `POST /errands` — create a new errand.
+- `GET /errands/{errand_id}/attachments` — list attachments for one owned errand.
+- `POST /errands/{errand_id}/attachments` — upload an attachment for one owned errand.
+
+Use `/admin/errands` only for admin/operator dashboards. Customer integrations should use
+`GET /errands` with a Bearer access token.
+
 ## Payment endpoints
 
 Stripe payment routes are documented under the `payments` tag in Swagger. Key endpoints include:
