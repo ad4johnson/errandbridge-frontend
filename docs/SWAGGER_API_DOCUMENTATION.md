@@ -220,6 +220,7 @@ Successful response shape:
   "data": {
     "sessionToken": "<time-limited-session-token>",
     "refreshToken": "<refresh-token>",
+    "userUuid": "2b84d1fd-3ed3-44b0-9470-f8f1f9ad9356",
     "expiresInSeconds": 3600,
     "tokenType": "bearer"
   },
